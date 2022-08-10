@@ -1,0 +1,36 @@
+---
+layout: post
+title:  "SFML_1"
+date:   2022-08-10 14:48:00 +0900
+categories: sfml study
+---
+
+`YEAR-MONTH-DAY-title.MARKUP`
+   
+{% highlight ruby %}
+window.display()
+{% endhighlight %}
+게임오브젝트를 draw하면 그 오브젝트를 숨겨진 surface에 그린다. 그리고 window.display() 함수는 현재 보여지는 surface를 숨겨진 surface로 바꾼다.
+미완성된 화면을 보여주는 것을 tearing이라 하는데 이런 방식을 사용하면 반드시 플레이어는 완성된 화면만을 본다. 이런 방식을 double buffering이라 한다.   
+<br/>
+{% highlight ruby %}
+  Texture textureBackground;
+  textureBackground.loadFromFile("Graphics/background.png");
+  Sprite spriteBackground;
+  spriteBackground.setTexture(textureBackground);
+  spriteBackground.setPosition(0, 0);
+{% endhighlight %}
+textureBackground.loadFromFile("Graphics/background.png") 함수는 background.png 파일을 GPU Memory로 load한다.
+이렇게 load된 리소스를 sprite.Background.setTexture(textureBackground)로 Sprite에 연결한다.
+연결된 Sprite를 원하는 위치로 조작할 수 있다.   
+   
+
+{% highlight ruby %}{% endhighlight %}
+   
+
+
+Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/
